@@ -1,0 +1,218 @@
+
+# Project Title: Analysis of Electric and Non-Electric Car Sales (2010-2023)
+
+## Table of Contents
+1. [Problem Statement/Objective](#problem-statementobjective)
+2. [Data Overview](#data-overview)
+3. [Data Cleaning and Preparation](#data-cleaning-and-preparation)
+4. [SQL Queries for Car Sales Analysis](#sql-queries-for-car-sales-analysis)
+5. [Results and Analysis](#results-and-analysis)
+6. [Recommendations](#recommendations)
+7. [Conclusion](#conclusion)
+8. [Data Source](#data-source)
+9. [Installation Instructions](#installation-instructions)
+10. [Usage Instructions](#usage-instructions)
+11. [Contributing](#contributing)
+12. [License](#license)
+
+## Problem Statement/Objective
+The automotive industry is undergoing a significant transformation with the rise of electric vehicles (EVs). This project aims to analyze car sales data from 2010 to 2023, focusing on electric and non-electric car sales across various countries. The objectives of this analysis include:
+- To understand total car sales trends over the years.
+- To identify the average annual growth rate of electric cars.
+- To assess the year-over-year changes in electric car sales.
+- To calculate annual totals for electric and non-electric car sales.
+- To derive a linear trend line for electric car sales.
+- To rank countries based on their electric car sales yearly.
+- To compute moving averages for better trend understanding.
+- To determine the global market share of electric cars.
+
+## Data Overview
+The dataset used for this analysis is the `car_sales_type` table, which contains the following relevant columns:
+- `country`: Name of the country.
+- `year`: Year of the sales data.
+- `electric_cars_sold`: Number of electric cars sold.
+- `non_electric_car_sales`: Number of non-electric cars sold.
+
+## Data Cleaning and Preparation
+In order to ensure the accuracy and reliability of the analysis, the dataset underwent several cleaning and preparation steps:
+- **Removed Data from the `country` Column**: The following entries were eliminated to uphold a country-level analysis:
+  - "World"
+  - "European Union"
+  - "Europe"
+- **Renamed Column**: The column previously labeled as `Entity` was changed to `Country` for clarity and consistency.
+- **Renamed Columns with Hyphens**: The following columns were updated to remove spaces and replace them with underscores for better compatibility with database queries:
+  - "electric cars sold" was renamed to `electric_cars_sold`
+  - "non electric car sales" was renamed to `non_electric_car_sales`
+- **Removed the `CODE` Column**: This column was deemed unnecessary for the analysis and was removed from the dataset.
+
+## SQL Queries for Car Sales Analysis
+a. Total Electric and Non-Electric Cars Sold (2010-2023)
+This query calculates the total number of electric and non-electric cars sold by country over the specified time period.
+
+
+SELECT 
+    country,
+    SUM(electric_cars_sold) AS total_electric_cars_sold,
+    SUM(non_electric_car_sales) AS total_non_electric_car_sales
+FROM car_sales_type
+WHERE year BETWEEN 2010 AND 2023
+GROUP BY country;
+
+
+b. Average Annual Growth Rate for Electric Cars (2010-2023)
+Using a Common Table Expression (CTE), this query calculates the average annual growth rate of electric car sales.
+
+
+WITH growth_rate AS (
+    SELECT 
+        country,
+        year,
+        electric_cars_sold,
+        LAG(electric_cars_sold) OVER (PARTITION BY country ORDER BY year) AS previous_year_sales
+    FROM car_sales_type
+    WHERE year BETWEEN 2010 AND 2023
+)
+SELECT 
+    country,
+    AVG((electric_cars_sold - previous_year_sales) / previous_year_sales * 100) AS avg_growth_rate
+FROM growth_rate
+WHERE previous_year_sales IS NOT NULL
+GROUP BY country;
+
+
+c. Year-Over-Year Change in Electric Cars Sold
+This query computes the year-over-year change and percentage change in electric car sales.
+
+
+SELECT 
+    country,
+    year,
+    electric_cars_sold,
+    LAG(electric_cars_sold) OVER (PARTITION BY country ORDER BY year) AS previous_year_sales,
+    (electric_cars_sold - LAG(electric_cars_sold) OVER (PARTITION BY country ORDER BY year)) AS current_change,
+    ((electric_cars_sold - LAG(electric_cars_sold) OVER (PARTITION BY country ORDER BY year)) / LAG(electric_cars_sold) OVER (PARTITION BY country ORDER BY year)) * 100 AS percentage_change
+FROM car_sales_type
+WHERE year BETWEEN 2010 AND 2023;
+
+
+d. Annual Totals for All Entities
+This query summarizes the total electric and non-electric car sales annually.
+
+
+SELECT 
+    year,
+    SUM(electric_cars_sold) AS total_electric_cars_sold,
+    SUM(non_electric_car_sales) AS total_non_electric_car_sales
+FROM car_sales_type
+WHERE year BETWEEN 2010 AND 2023
+GROUP BY year
+ORDER BY year;
+
+
+e. Slope and Intercept Calculation for Electric Car Sales Trend (2010-2023)
+This CTE calculates the slope and intercept for the linear trend of electric car sales over time.
+
+
+WITH stats AS (
+    SELECT 
+        COUNT(*) AS n,
+        SUM(year) AS sum_year,
+        SUM(electric_cars_sold) AS sum_sales,
+        SUM(year * electric_cars_sold) AS sum_year_sales,
+        SUM(year * year) AS sum_year_squared
+    FROM car_sales_type
+    WHERE year BETWEEN 2010 AND 2023
+)
+SELECT 
+    (n * sum_year_sales - sum_year * sum_sales) / (n * sum_year_squared - sum_year * sum_year) AS slope,
+    (sum_sales - ((n * sum_year_sales - sum_year * sum_sales) / (n * sum_year_squared - sum_year * sum_year)) * sum_year) / n AS intercept
+FROM stats;
+
+
+f. Yearly Ranking of Electric Car Sales by Country
+This query ranks countries based on electric car sales for each year.
+
+
+SELECT 
+    country,
+    year,
+    electric_cars_sold,
+    RANK() OVER (PARTITION BY year ORDER BY electric_cars_sold DESC) AS sales_rank
+FROM car_sales_type
+WHERE year BETWEEN 2010 AND 2023
+ORDER BY year, sales_rank;
+
+
+g. Moving Average of Electric Car Sales (Last 3 Years)
+This query calculates the moving average of electric car sales over the last three years for each country.
+
+
+SELECT 
+    country,
+    year,
+    AVG(electric_cars_sold) OVER (PARTITION BY country ORDER BY year ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS moving_avg_sales
+FROM car_sales_type
+WHERE year BETWEEN 2010 AND 2023;
+
+
+h. Global Market Share of Electric Cars
+Using a CTE, this query calculates the global market share of electric cars by country.
+
+
+WITH total_world_sales AS (
+    SELECT 
+        year,
+        SUM(electric_cars_sold) AS total_world_sales
+    FROM car_sales_type
+    WHERE country IS NOT NULL 
+    GROUP BY year
+)
+SELECT 
+    c.country,
+    c.year,
+    c.electric_cars_sold,
+    (c.electric_cars_sold / w.total_world_sales) * 100 AS global_market_share
+FROM car_sales_type c
+JOIN total_world_sales w ON c.year = w.year
+WHERE c.year BETWEEN 2010 AND 2023
+ORDER BY c.year, global_market_share DESC;
+
+## Results and Analysis
+Summary of Findings
+The results provide insights into market trends, growth rates, and rankings of countries based on electric vehicle sales.
+Total Sales: The analysis reveals trends in electric versus non-electric car sales, highlighting shifts in consumer preferences.
+Growth Rate: The average growth rate indicates which countries are leading in the adoption of electric vehicles.
+Year-Over-Year Changes: Yearly fluctuations in sales provide insights into market dynamics and economic factors influencing car sales.
+Trends: The slope and intercept calculations help to predict future sales trends.
+Rankings: Yearly rankings showcase which countries are leading in electric vehicle adoption.
+Moving Averages: The moving average helps to smooth out short-term fluctuations, providing clearer trends.
+Market Share: The global market share analysis indicates the relative standing of each country in the global electric car market.
+
+
+
+## Recommendations
+Key recommendations for stakeholders based on the analysis findings include:
+Focus on Growth Areas: Countries with high growth rates in electric car sales should be targeted for marketing and sales efforts.
+Investment in Infrastructure: Increased infrastructure for electric cars (charging stations, incentives) can further stimulate sales.
+Monitor Trends: Regularly analyze sales data to adapt marketing strategies and production plans accordingly.
+Sustainability Initiatives: Promote the environmental benefits of electric cars to align with growing consumer demand for sustainable products.
+
+
+## Conclusion
+The analysis of electric and non-electric car sales from 2010 to 2023 provides valuable insights into market trends and consumer preferences. As the automotive industry continues to evolve, leveraging this data will be crucial for stakeholders aiming to make informed decisions that align with market demands and sustainability goals.
+
+## Data Source
+Hannah Ritchie (2024) - “Tracking global data on electric vehicles” Published online at OurWorldinData.org. Retrieved from: [https://ourworldindata.org/electric-car-sales](https://ourworldindata.org/electric-car-sales) [Online Resource].
+
+## Installation Instructions
+1. Clone the repository: `git clone <repository_url>`
+2. Install required packages: `pip install -r requirements.txt`
+
+## Usage Instructions
+To run the analysis, execute the following command: `python analyze_car_sales.py`
+
+## Contributing
+If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
