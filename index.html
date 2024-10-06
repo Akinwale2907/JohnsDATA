@@ -1,15 +1,16 @@
 <!DOCTYPE HTML>
-<!--
-    John Akinwale's Portfolio - Showcasing data analysis, cloud architecture, and more.
--->
+<!-- John Akinwale's Portfolio - Showcasing data analysis, cloud architecture, and more -->
 <html lang="en">
+
 <head>
     <title>John Akinwale</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="Portfolio of John Akinwale, a data analyst with expertise in SQL, Power BI, and Python." />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
     <style>
         /* Additional CSS for layout and styling */
         .posts {
@@ -35,18 +36,61 @@
             height: auto;
         }
 
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .post {
+                flex: 1 1 100%; /* Each post takes full width on small screens */
+            }
+
+            .about-container {
+                flex-direction: column;
+                align-items: flex-start; /* Stack image and text vertically */
+            }
+
+            .about-image img,
+            .image img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+
         /* Make sure contact info is visible by default */
         .split.contact section a {
             opacity: 1;
             visibility: visible;
         }
 
-        .split.contact section p, .split.contact section h3 {
+        .split.contact section p,
+        .split.contact section h3 {
             opacity: 1;
             visibility: visible;
         }
+
+        /* About section styling */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .about-image {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .about-text {
+            flex: 1;
+        }
     </style>
 </head>
+
 <body class="is-preload">
 
     <!-- Wrapper -->
@@ -74,7 +118,7 @@
                 <li><a href="#about" onclick="showAbout()">ABOUT ME</a></li>
             </ul>
             <ul class="icons">
-                <li><a href="https://www.linkedin.com/in/johnakin29/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+                <li><a href="https://www.linkedin.com/in/johnakin29/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
                 <li><a href="https://github.com/Akinwale2907" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
             </ul>
         </nav>
@@ -90,12 +134,12 @@
                         <h2><a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis">DATA ANALYSIS USING SQL AND POWER BI<br /></a></h2>
                         <p>In this project, we cleaned and explored Electric Car Sales Data from the year 2010 - 2023 with an interactive Dashboard Visualization.</p>
                     </header>
-                    
+
                     <!-- Responsive Image for Mobile -->
                     <a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis" class="image main">
                         <img src="images/Evs & Non-EVs Car Sales.png" alt="EVs & Non-EVs Car Sales" style="width:100%; height:auto;" />
                     </a>
-                    
+
                     <!-- Buttons Section -->
                     <ul class="actions special">
                         <li><a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis" class="button large">VIEW PROJECT</a></li>
@@ -150,108 +194,96 @@
                         </ul>
                     </article>
                 </section>
-
             </div>
 
             <!-- About Me Section -->
-       <!-- About Me Section --> 
-<div id="about" class="section-content" style="display:none;">
-    <div class="about-container" style="display: flex; align-items: center; gap: 20px;">
-        
-        <!-- Image Section (Now First) -->
-        <div class="about-image" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center;">
-            <img src="images/Eleg.png" alt="Profile Image" style="max-width: 300px; height: auto;" />
-        </div>
+            <div id="about" class="section-content" style="display:none;">
+                <div class="about-container">
+                    <!-- Image Section -->
+                    <div class="about-image">
+                        <img src="images/Eleg.png" alt="Profile Image" />
+                    </div>
 
-        <!-- Header and Text Section -->
-        <div class="about-text" style="flex: 1;">
-            <header>
-                <h2>About Me</h2>
-            </header>
-            <p>With a background in data analysis and a passion for transforming raw data into actionable insights, I specialize in utilizing SQL, Power BI, and Python. My experience spans various industries, where I've successfully executed projects that bridge the gap between numbers and narratives. I thrive on solving complex problems and driving efficiency through data-driven decision-making.</p>
-            <p>In my spare time, I enjoy exploring new data visualization techniques, contributing to open-source projects, and continuously improving my skills through online courses and community engagement.</p>
-        </div>
-    </div>
-    
-    <!-- Posts Section for Images -->
-    <section class="posts">
-        <!-- First Image as Post -->
-        <article class="post featured full-width">
-            <header class="major">
-                <h2>My Journey in Data Science</h2>
-            </header>
-            <a href="#" class="image main"><img src="images/Myjourn.png" alt="My Journey in Data Science" /></a>
-            <p>This image illustrates my journey into the world of data science and analytics, highlighting key milestones and achievements.</p>
-        </article>
-        
-        <!-- Remaining Posts -->
-        <article class="post">
-            <header>
-                <h2>Skills and Tools</h2>
-            </header>
-            <a href="#" class="image"><img src="images/DPO.png" alt="Skills and Tools" /></a>
-            <p>I am proficient in various tools and technologies essential for data analysis, including SQL, Python, and Power BI.</p>
-        </article>
-        <article class="post">
-            <header>
-                <h2>Continuous Learning</h2>
-            </header>
-            <a href="#" class="image"><img src="images/cont.png" alt="Continuous Learning" /></a>
-            <p>I believe in lifelong learning and constantly seek to upgrade my knowledge and skills through courses, webinars, and community involvement.</p>
-        </article>
-    </section>
-</div>
+                    <!-- Header and Text Section -->
+                    <div class="about-text">
+                        <header>
+                            <h2>About Me</h2>
+                        </header>
+                        <p>With a background in data analysis and a passion for transforming raw data into actionable insights, I specialize in utilizing SQL, Power BI, and Python. My experience spans various industries, where I've successfully executed projects that bridge the gap between numbers and narratives. I thrive on solving complex problems and driving efficiency through data-driven decision-making.</p>
+                        <p>In my spare time, I enjoy exploring new data visualization techniques, contributing to open-source projects, and continuously improving my skills through online courses and community engagement.</p>
+                    </div>
+                </div>
 
+                <!-- Posts Section for About Me Images -->
+                <section class="posts">
+                    <!-- First Image as Post -->
+                    <article class="post featured full-width">
+                        <header class="major">
+                            <h2>My Journey in Data Science</h2>
+                        </header>
+                        <a href="#" class="image main"><img src="images/Myjourn.png" alt="My Journey in Data Science" /></a>
+                        <p>This image illustrates my journey into the world of data science and analytics, highlighting key milestones and achievements.</p>
+                    </article>
 
+                    <!-- Remaining Posts -->
+                    <article class="post">
+                        <header>
+                            <h2>Skills and Tools</h2>
+                        </header>
+                        <a href="#" class="image"><img src="images/DPO.png" alt="Skills and Tools" /></a>
+                        <p>I am proficient in various tools and technologies essential for data analysis, including SQL, Python, and Power BI.</p>
+                    </article>
 
-
+                    <article class="post">
+                        <header>
+                            <h2>Continuous Learning</h2>
+                        </header>
+                        <a href="#" class="image"><img src="images/cont.png" alt="Continuous Learning" /></a>
+                        <p>I believe in lifelong learning and constantly seek to upgrade my knowledge and skills through courses, webinars, and community involvement.</p>
+                    </article>
+                </section>
+            </div>
 
         </div>
 
         <!-- Footer -->
         <footer id="footer">
             <section class="split contact">
-                <section class="alt">
-                    <h3>LOCATION</h3>
-                    <p>UNITED KINGDOM, ESSEX</p>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:johnakinwale2017@gmail.com">johnakinwale2017@gmail.com</a></p>
                 </section>
                 <section>
                     <h3>Phone</h3>
-                    <p><a href="tel:+447887938528">(+44) 7887-938-528</a></p>
+                    <p><a href="tel:+2348060335232">+234 806 033 5232</a></p>
                 </section>
                 <section>
-                    <h3>Email</h3>
-                    <p><a href="mailto:John.akinwaley@gmail.com">John.akinwaley@gmail.com</a></p>
-                </section>
-                <section>
-                    <h3>Social</h3>
-                    <ul class="icons alt">
-                        <li><a href="https://www.linkedin.com/in/johnakin29/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-                        <li><a href="https://github.com/Akinwale2907" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-                    </ul>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/johnakin29/">@JohnsDataStory</a></p>
                 </section>
             </section>
         </footer>
-
     </div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        function showProjects() {
-            document.getElementById('projects').style.display = 'block';
-            document.getElementById('about').style.display = 'none';
+        function showAbout() {
+            document.getElementById("about").style.display = "block";
+            document.getElementById("projects").style.display = "none";
         }
 
-        function showAbout() {
-            document.getElementById('about').style.display = 'block';
-            document.getElementById('projects').style.display = 'none';
+        function showProjects() {
+            document.getElementById("projects").style.display = "block";
+            document.getElementById("about").style.display = "none";
         }
     </script>
-
 </body>
+
 </html>
