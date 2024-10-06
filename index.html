@@ -1,175 +1,257 @@
 <!DOCTYPE HTML>
 <!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    John Akinwale's Portfolio - Showcasing data analysis, cloud architecture, and more.
 -->
-<html>
-	<head>
-		<title>John Akinwale.</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<html lang="en">
+<head>
+    <title>John Akinwale</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Portfolio of John Akinwale, a data analyst with expertise in SQL, Power BI, and Python." />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+        /* Additional CSS for layout and styling */
+        .posts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+        .post {
+            flex: 1 1 calc(50% - 20px); /* Each post takes 50% of the width, minus spacing */
+            box-sizing: border-box;
+            border: 1px solid #ccc; /* Thin border around each post */
+            padding: 20px;
+            margin-bottom: 20px;
+        }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>John Akinwale<br />
-						</h1>
-						<p>"Bridging Numbers With Narratives and Transforming Raw Data Into Actionable Insights With Expertise in SQL, Power BI, and Python. 
-							<p>Discover The Story Your Data Has To Tell.
+        .featured {
+            margin-bottom: 40px; /* Space below the featured project */
+        }
 
-							<a href="www.linkedin.com/in/johnakin29">@JohnsDataStory</a>.</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+        .image img {
+            width: 100%;
+            height: auto;
+        }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Data Nexus</a>
-					</header>
+        /* Make sure contact info is visible by default */
+        .split.contact section a {
+            opacity: 1;
+            visibility: visible;
+        }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">PROJECTS</a></li>
-							
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/johnakin29/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-									<li><a href="https://github.com/Akinwale2907" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+        .split.contact section p, .split.contact section h3 {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+<body class="is-preload">
 
-				<!-- Main -->
-					<div id="main">
+    <!-- Wrapper -->
+    <div id="wrapper" class="fade-in">
 
-						<!-- Featured Post -->
-						<article class="post featured">
-							<header class="major">
-								<h2><a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis">DATA ANALYSIS USING SQL AND POWER BI<br /></a></h2>
-								<p>In this project we cleaned and explored Electric Car Sales Data from the year 2010 - 2023 with an interactive Dashboard Visualization.</p>
-							</header>
-							
-							<!-- Responsive Image for Mobile -->
-							<a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis" class="image main">
-								<img src="images/Evs & Non-EVs Car Sales.png" alt="EVs & Non-EVs Car Sales" style="width:100%; height:auto;" />
-							</a>
-							
-							<!-- Buttons Section -->
-							<ul class="actions special">
-								<li><a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis" class="button large">VIEW PROJECT</a></li>
-								<li><a href="https://github.com/user-attachments/files/17265230/Evs.Non-EVs.Car.Sales.pdf" class="button large">VIEW PDF</a></li>
-								<li><a href="https://app.powerbi.com/links/nKGrIPtmhm?ctid=0de96fbb-2304-4d24-a804-bec6ec09f4b7&pbi_source=linkShare&bookmarkGuid=bded2f61-6bf3-4317-a7e1-f60ad66aea75" class="button large">VIEW DASHBOARD</a></li>
-							</ul>
-						</article>
+        <!-- Intro -->
+        <div id="intro">
+            <h1>John Akinwale<br /></h1>
+            <p>"Bridging Numbers With Narratives and Transforming Raw Data Into Actionable Insights With Expertise in SQL, Power BI, and Python."</p>
+            <p>Discover The Story Your Data Has To Tell. <a href="https://www.linkedin.com/in/johnakin29">@JohnsDataStory</a>.</p>
+            <ul class="actions">
+                <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+            </ul>
+        </div>
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										
-										<h2><a href="#">Cost Optimization in Multi-Cloud Architectures: A Data-Driven Approach. <br />
-									</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/cloud1.png" alt="" /></a>
-									<p>This Project seeks to analyze cloud usage data from multi-cloud platforms to identify cost optimization opportunities, focusing on resource usage, serverless computing, and auto-scaling.
-										Developing a predictive models to recommend the most cost-effective cloud services..</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">WORKING IT...</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="#">Data-Driven Analysis of Warehouse Automation Efficiency in E-Commerce<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/WH Robot.png" alt="" /></a>
-									<p>This Project seeks to analyze data from automated warehouse systems (robots, sensors) to evaluate efficiency in product sorting, packing, and inventory management.
-										Using process mining techniques to identify bottlenecks and suggest improvements.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">OPTIMIZING PROCESSES...</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date"></span>
-										<h2><a href="#">Health Data Analysis from Wearable Devices for Early Disease Detection<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/EDisease.png" alt="" /></a>
-									<p>Analyzing health data (e.g., heart rate, steps, sleep patterns) from wearables to detect early signs of conditions like diabetes, hypertension, or sleep apnea.
-										Applying machine learning to create personalized health models based on real-time data from wearables.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">VALIDATING MODELS...</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date"></span>
-										<h2><a href="#">Solar Energy Generation Forecasting Using Historical Weather Data<br />
-										</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/Solar.png" alt="" /></a>
-									<p>Analyzing historical weather data (e.g., solar radiation, temperature) to forecast solar energy generation in different regions.
-										Using machine learning models (e.g., random forests, neural networks) for predictive analysis.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">ANALYZING TRENDS...</a></li>
-									</ul>
-								</article>
-								
-							</section>
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Data Nexus</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li class="active"><a href="#projects" onclick="showProjects()">PROJECTS</a></li>
+                <li><a href="#about" onclick="showAbout()">ABOUT ME</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/johnakin29/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+                <li><a href="https://github.com/Akinwale2907" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Projects Section -->
+            <div id="projects" class="section-content">
+                <!-- Full Width Project 1 -->
+                <article class="post featured full-width">
+                    <header class="major">
+                        <h2><a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis">DATA ANALYSIS USING SQL AND POWER BI<br /></a></h2>
+                        <p>In this project, we cleaned and explored Electric Car Sales Data from the year 2010 - 2023 with an interactive Dashboard Visualization.</p>
+                    </header>
+                    
+                    <!-- Responsive Image for Mobile -->
+                    <a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis" class="image main">
+                        <img src="images/Evs & Non-EVs Car Sales.png" alt="EVs & Non-EVs Car Sales" style="width:100%; height:auto;" />
+                    </a>
+                    
+                    <!-- Buttons Section -->
+                    <ul class="actions special">
+                        <li><a href="https://github.com/Akinwale2907/EVs-Non-EVs-Car-Sales-Data-Analysis" class="button large">VIEW PROJECT</a></li>
+                        <li><a href="https://github.com/user-attachments/files/17265230/Evs.Non-EVs.Car.Sales.pdf" class="button large">VIEW PDF</a></li>
+                        <li><a href="https://app.powerbi.com/links/nKGrIPtmhm?ctid=0de96fbb-2304-4d24-a804-bec6ec09f4b7&pbi_source=linkShare" class="button large">VIEW DASHBOARD</a></li>
+                    </ul>
+                </article>
+
+                <!-- Posts Section for Projects 2 to 5 -->
+                <section class="posts">
+                    <article class="post">
+                        <header>
+                            <h2><a href="#">Cost Optimization in Multi-Cloud Architectures: A Data-Driven Approach.<br /></a></h2>
+                        </header>
+                        <a href="#" class="image"><img src="images/cloud1.png" alt="Cloud Optimization" /></a>
+                        <p>This project seeks to analyze cloud usage data from multi-cloud platforms to identify cost optimization opportunities, focusing on resource usage, serverless computing, and auto-scaling.</p>
+                        <ul class="actions special">
+                            <li><a href="#" class="button">WORKING IT...</a></li>
+                        </ul>
+                    </article>
+
+                    <article class="post">
+                        <header>
+                            <h2><a href="#">Data-Driven Analysis of Warehouse Automation Efficiency in E-Commerce<br /></a></h2>
+                        </header>
+                        <a href="#" class="image"><img src="images/WH Robot.png" alt="Warehouse Automation" /></a>
+                        <p>This project seeks to analyze data from automated warehouse systems (robots, sensors) to evaluate efficiency in product sorting, packing, and inventory management.</p>
+                        <ul class="actions special">
+                            <li><a href="#" class="button">OPTIMIZING PROCESSES...</a></li>
+                        </ul>
+                    </article>
+
+                    <article class="post">
+                        <header>
+                            <h2><a href="#">Health Data Analysis from Wearable Devices for Early Disease Detection<br /></a></h2>
+                        </header>
+                        <a href="#" class="image"><img src="images/EDisease.png" alt="Health Data Analysis" /></a>
+                        <p>Analyzing health data (e.g., heart rate, steps, sleep patterns) from wearables to detect early signs of conditions like diabetes, hypertension, or sleep apnea.</p>
+                        <ul class="actions special">
+                            <li><a href="#" class="button">VALIDATING MODELS...</a></li>
+                        </ul>
+                    </article>
+
+                    <article class="post">
+                        <header>
+                            <h2><a href="#">Solar Energy Generation Forecasting Using Historical Weather Data<br /></a></h2>
+                        </header>
+                        <a href="#" class="image"><img src="images/Solar.png" alt="Solar Energy Forecasting" /></a>
+                        <p>Analyzing historical weather data (e.g., solar radiation, temperature) to forecast solar energy generation in different regions.</p>
+                        <ul class="actions special">
+                            <li><a href="#" class="button">ANALYZING TRENDS...</a></li>
+                        </ul>
+                    </article>
+                </section>
+
+            </div>
+
+            <!-- About Me Section -->
+       <!-- About Me Section --> 
+<div id="about" class="section-content" style="display:none;">
+    <div class="about-container" style="display: flex; align-items: center; gap: 20px;">
+        
+        <!-- Image Section (Now First) -->
+        <div class="about-image" style="flex: 0 0 auto; display: flex; align-items: center; justify-content: center;">
+            <img src="images/Eleg.png" alt="Profile Image" style="max-width: 300px; height: auto;" />
+        </div>
+
+        <!-- Header and Text Section -->
+        <div class="about-text" style="flex: 1;">
+            <header>
+                <h2>About Me</h2>
+            </header>
+            <p>With a background in data analysis and a passion for transforming raw data into actionable insights, I specialize in utilizing SQL, Power BI, and Python. My experience spans various industries, where I've successfully executed projects that bridge the gap between numbers and narratives. I thrive on solving complex problems and driving efficiency through data-driven decision-making.</p>
+            <p>In my spare time, I enjoy exploring new data visualization techniques, contributing to open-source projects, and continuously improving my skills through online courses and community engagement.</p>
+        </div>
+    </div>
+    
+    <!-- Posts Section for Images -->
+    <section class="posts">
+        <!-- First Image as Post -->
+        <article class="post featured full-width">
+            <header class="major">
+                <h2>My Journey in Data Science</h2>
+            </header>
+            <a href="#" class="image main"><img src="images/Myjourn.png" alt="My Journey in Data Science" /></a>
+            <p>This image illustrates my journey into the world of data science and analytics, highlighting key milestones and achievements.</p>
+        </article>
+        
+        <!-- Remaining Posts -->
+        <article class="post">
+            <header>
+                <h2>Skills and Tools</h2>
+            </header>
+            <a href="#" class="image"><img src="images/DPO.png" alt="Skills and Tools" /></a>
+            <p>I am proficient in various tools and technologies essential for data analysis, including SQL, Python, and Power BI.</p>
+        </article>
+        <article class="post">
+            <header>
+                <h2>Continuous Learning</h2>
+            </header>
+            <a href="#" class="image"><img src="images/cont.png" alt="Continuous Learning" /></a>
+            <p>I believe in lifelong learning and constantly seek to upgrade my knowledge and skills through courses, webinars, and community involvement.</p>
+        </article>
+    </section>
+</div>
 
 
-				
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>LOCATION</h3>
-								<p>UNITED KINGDOM, ESSEX</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(+44) 7887-938-528</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">John.akinwaley@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									
-									<li><a href="https://www.linkedin.com/in/johnakin29/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-									<li><a href="https://github.com/Akinwale2907" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
 
-			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        </div>
 
-	</body>
+        <!-- Footer -->
+        <footer id="footer">
+            <section class="split contact">
+                <section class="alt">
+                    <h3>LOCATION</h3>
+                    <p>UNITED KINGDOM, ESSEX</p>
+                </section>
+                <section>
+                    <h3>Phone</h3>
+                    <p><a href="tel:+447887938528">(+44) 7887-938-528</a></p>
+                </section>
+                <section>
+                    <h3>Email</h3>
+                    <p><a href="mailto:John.akinwaley@gmail.com">John.akinwaley@gmail.com</a></p>
+                </section>
+                <section>
+                    <h3>Social</h3>
+                    <ul class="icons alt">
+                        <li><a href="https://www.linkedin.com/in/johnakin29/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
+                        <li><a href="https://github.com/Akinwale2907" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+            </section>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        function showProjects() {
+            document.getElementById('projects').style.display = 'block';
+            document.getElementById('about').style.display = 'none';
+        }
+
+        function showAbout() {
+            document.getElementById('about').style.display = 'block';
+            document.getElementById('projects').style.display = 'none';
+        }
+    </script>
+
+</body>
 </html>
