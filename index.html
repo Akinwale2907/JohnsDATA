@@ -16,7 +16,7 @@
         .posts {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 20px; /* Space between articles */
         }
 
         .post {
@@ -32,8 +32,25 @@
         }
 
         .image img {
-            width: 100%;
+            width: 100%; /* Ensure images take full width of their container */
             height: auto;
+        }
+
+        /* Button styling for vertical alignment */
+        .actions.special {
+            list-style: none; /* Remove default list styling */
+            padding: 0; /* Remove padding */
+            margin: 0; /* Remove margin */
+        }
+
+        .actions.special li {
+            margin-bottom: 10px; /* Space between buttons */
+        }
+
+        .actions.special li a {
+            display: block; /* Ensure each button is a block element */
+            width: 100%; /* Ensure buttons fill the width of the parent */
+            text-align: center; /* Center text in buttons */
         }
 
         /* Mobile responsiveness */
@@ -148,16 +165,17 @@
                     </ul>
                 </article>
 
-                <!-- Posts Section for Projects 2 to 5 -->
+                <!-- Posts Section for Projects 2 to 6 -->
                 <section class="posts">
                     <article class="post">
                         <header>
                             <h2><a href="#">Pension Fund Analysis: Management Information Reporting.<br /></a></h2>
                         </header>
                         <a href="#" class="image"><img src="images/PensionFund.png" alt="Cloud Optimization" /></a>
-                        <p>A comprehensive analysis of the pension data using Python to provide actionable insights for managements or stakeholders regarding retirement readiness, contribution patterns, risk profiles, financial health of participants, and other key metrics.</p>
+                        <p>A comprehensive analysis of pension data using Python to provide actionable insights for management and stakeholders regarding retirement readiness, contribution patterns, risk profiles, financial health of participants, and other key metrics.</p>
                         <ul class="actions special">
-                            <li><a href="#" class="button">Explore Insights...</a></li>
+                            <li><a href="#" class="button">View Project</a></li>
+                            <li><a href="#" class="button">Executive Summary</a></li> <!-- New Button -->
                         </ul>
                     </article>
                     
@@ -169,18 +187,19 @@
                         <p>This project seeks to analyze cloud usage data from multi-cloud platforms to identify cost optimization opportunities, focusing on resource usage, serverless computing, and auto-scaling.</p>
                         <ul class="actions special">
                             <li><a href="#" class="button">WORKING...</a></li>
+                            <li><a href="#" class="button">See Details...</a></li> <!-- New Button -->
                         </ul>
                     </article>
 
-                    <section class="posts">
-                        <article class="post">
+                    <article class="post">
                         <header>
                             <h2><a href="#">Cost Optimization in Multi-Cloud Architectures: A Data-Driven Approach.<br /></a></h2>
                         </header>
                         <a href="#" class="image"><img src="images/cloud1.png" alt="Cloud Optimization" /></a>
                         <p>This project seeks to analyze cloud usage data from multi-cloud platforms to identify cost optimization opportunities, focusing on resource usage, serverless computing, and auto-scaling.</p>
                         <ul class="actions special">
-                            <li><a href="#" class="button">WORKING...</a></li>
+                            <li><a href="#" class="button">WORKING2...</a></li>
+                            <li><a href="#" class="button">See Details...</a></li> <!-- New Button -->
                         </ul>
                     </article>
 
@@ -192,6 +211,7 @@
                         <p>This project seeks to analyze data from automated warehouse systems (robots, sensors) to evaluate efficiency in product sorting, packing, and inventory management.</p>
                         <ul class="actions special">
                             <li><a href="#" class="button">OPTIMIZING PROCESSES...</a></li>
+                            <li><a href="#" class="button">See Insights...</a></li> <!-- New Button -->
                         </ul>
                     </article>
 
@@ -203,6 +223,7 @@
                         <p>Analyzing health data (e.g., heart rate, steps, sleep patterns) from wearables to detect early signs of conditions like diabetes, hypertension, or sleep apnea.</p>
                         <ul class="actions special">
                             <li><a href="#" class="button">VALIDATING MODELS...</a></li>
+                            <li><a href="#" class="button">See Insights...</a></li> <!-- New Button -->
                         </ul>
                     </article>
 
@@ -214,6 +235,7 @@
                         <p>Analyzing historical weather data (e.g., solar radiation, temperature) to forecast solar energy generation in different regions.</p>
                         <ul class="actions special">
                             <li><a href="#" class="button">ANALYZING TRENDS...</a></li>
+                            <li><a href="#" class="button">See Insights...</a></li> <!-- New Button -->
                         </ul>
                     </article>
                 </section>
